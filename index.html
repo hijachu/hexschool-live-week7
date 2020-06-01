@@ -5,19 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>直播班作業 Week 1</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        [data-aos="example-anim1"] {
+            transform: skewX(45deg);
+            opacity: 0;
+            transition-property: transform, opacity;
+
+        }
+        [data-aos="example-anim1"].aos-animate {
+            transform: skewX(0);
+            opacity: 1;
+        }
+    </style>
+
 </head>
 <body>
     <header class="container">
         <h1 class="name-title">Joanne Chen</h1>
         <hr class="name">
-        <img src="images/photo-1536180931879-fd2d652efddc/photo-1536180931879-fd2d652efddc.png"
+        <img data-aos="flip-left" src="images/photo-1536180931879-fd2d652efddc/photo-1536180931879-fd2d652efddc.png"
             class="photo-sticker"
             alt="photo-sticker" />
     </header>
 
     <main>
         <section class="profile container">
-            <h2 class="header">
+            <h2 data-aos="example-anim1" class="header">
                 <span class="header-chinese">個人資料</span>
                 <span class="header-english">PROFILE</span>
             </h2>
@@ -134,5 +148,11 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200
+        });
+    </script>
 </body>
 </html>
