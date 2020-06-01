@@ -1,0 +1,477 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    position: relative;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ----------------------------------------------------------------
+    General
+* ---------------------------------------------------------------- */
+
+body {
+    font-family: "微軟正黑體", sans-serif;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1.name-title {
+    width: 288px;
+    font-size: 80px;
+    line-height: 90px;
+
+    margin-top: 48px;
+    margin-bottom: 24px;
+}
+
+hr.name {
+    border: 2px solid #000000;
+    margin-bottom: 48px;
+}
+
+.photo-sticker {
+    display: block;
+    width: 324px;
+    height: 324px;
+
+    margin-bottom: 48px;
+}
+
+.header {
+    height: 45px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+.header-chinese {
+    font-size: 32px;
+
+    margin-right: 16px;
+}
+
+.header-english {
+    color: #A00404;
+    font-size: 24px;
+}
+
+hr.header-hr {
+    border: 1px solid #000000;
+}
+
+.content {
+    font-size: 24px;
+    line-height: 35px;
+
+    margin-left: 48px;
+    margin-bottom: 72px;
+}
+
+.item-prefix-bullet {
+    /* 讓偽元素以原本的 element 作為定位點，因此需要設定為 "相對位置" */
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.item-prefix-bullet::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+
+    position: absolute;
+    top: 10px;      /* 36/2 - 16/2 */
+    left: -32px;    /* -16 + -16 */
+
+    border-radius: 50%;
+    background: #96A9C4;
+}
+
+/* ----------------------------------------------------------------
+    Education
+* ---------------------------------------------------------------- */
+.education {
+    margin-bottom: 72px;
+}
+
+.item-list .start-item {
+    margin-bottom: 32px;
+}
+
+/* pseudo element to draw a vertical line */
+.start-item::after {
+    content: "";
+
+    /* 偽元素需設定成 "絕對位置" */
+    position: absolute;
+
+    border-left: 1px solid #96A9C4;
+    /* 一定要加上 top, bottom 的值，線條才會有高度 */
+    /* 設定 top 0px, bottom 0px 就會剛好撐滿整個 ul 的高度 */
+    top: 17px;      /* (33+1) / 2  圓心對齊文字位置中心位置 */
+    bottom: 0;
+
+    height: 70px;    /* 32 + 33 + 5 */
+
+    /* 為了要讓線條對準圓心，因此需往左 16（圓圈和文字之間的距離）+ 8（圓圈的半徑）= 24px */
+    left: -24px;
+    z-index: 2;
+}
+
+/* ----------------------------------------------------------------
+    Skill
+* ---------------------------------------------------------------- */
+.skill {
+    position: relative;
+}
+
+/* 用偽元素做背景的方塊 */
+.skill::before {
+    content: "";
+    height: 360px;
+    /* 填滿body */
+    width: 100%;
+
+    /* 垂直置中定位 */
+    position: absolute;
+    /* (494-360)/2 */
+    top: 67px;
+
+    background-color: #96A9C4;
+    /* 壓到後面 */
+    z-index: -1;
+}
+
+.skill .header {
+    /* 522 - 102 = 420 */
+    margin-left: 420px;
+}
+.skill .header-english {
+    color: #ffffff;
+}
+
+.skill-wrap {
+    box-sizing: border-box;
+    background-color: #415165;
+    color: #ffffff;
+
+    padding-top: 24px;
+    padding-bottom: 56px;
+
+    padding-left: 102px;
+    padding-right: 102px;
+
+    margin-bottom: 72px;
+}
+
+.skill hr {
+    margin-bottom: 40px;
+}
+
+.skill ul {
+    margin-left: 420px;
+    width: 216px;
+    position: relative;
+}
+
+.skill ul li {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+.skill ul li:last-child {
+    margin-bottom: 0px;
+}
+.skill ul li::before {
+    content: "";
+    /* 偽元素需設定成 "絕對位置" */
+    position: absolute;
+    border-left: 1px solid #96A9C4;
+    /* 一定要加上 top, bottom 的值，線條才會有高度 */
+    top: 0px;
+    bottom: 0px;
+    height: 321px;
+
+    left: -24px;
+    z-index: 2;
+}
+
+/* ----------------------------------------------------------------
+    Work Experience
+* ---------------------------------------------------------------- */
+.work-experience .header-hr {
+    margin-bottom: 22px;
+}
+
+.work-experience .content {
+    position: relative;
+}
+
+.exp-item {
+    line-height: 33px;
+    font-weight: 600;
+}
+
+.exp-start-item,
+.exp-end-item {
+    margin-bottom: 8px;
+}
+.exp-start-item::before {
+    content: "";
+
+    /* 偽元素需設定成 "絕對位置" */
+    position: absolute;
+
+    border-left: 1px solid #96A9C4;
+    /* 一定要加上 top, bottom 的值，線條才會有高度 */
+    top: 0px;
+    bottom: 0px;
+    height: 647px;
+
+    left: -24px;
+    z-index: 2;
+}
+
+.exp-logo-hex {
+    display: block;
+    width: auto;
+    height: auto;
+    margin-bottom: 8.15px;
+}
+
+.exp-item-detail {
+    width: 642px;
+    font-size: 20px;
+    line-height: 30px;
+
+    padding-bottom: 4px;
+    margin-bottom: 32px;
+}
+
+.exp-middle-item {
+    margin-bottom: 32px;
+}
+
+.exp-logo-simtree {
+    display: block;
+    width: 72px;
+    height: 73px;
+
+    margin-bottom: 8px;
+}
+
+.exp-end-item-detail {
+    width: 400px;
+    height: 28px;
+
+    font-size: 20px;
+    line-height: 30px;
+
+    margin-bottom: 72px;
+}
+
+/* ----------------------------------------------------------------
+    Contact Method
+* ---------------------------------------------------------------- */
+.contact-method {
+    /* margin: 0 auto; */
+    position: relative;
+}
+
+/* 用偽元素做背景的方塊 */
+.contact-method::after {
+    content: "";
+    height: 100%;
+    /* 填滿body的寬 */
+    width: 100%;
+    background-color: #415165;
+
+    position: absolute;
+    top: 0;
+
+    /* 壓到後面 */
+    z-index: -1;
+}
+
+.contact-method .header {
+    justify-content: center;
+}
+.contact-method .header-english {
+    color: #ffffff;
+}
+
+.contact-method-wrap {
+    box-sizing: border-box;
+
+    background-color: #415165;
+    color: #ffffff;
+
+    text-align: center;
+
+    padding-top: 24px;
+    padding-bottom: 48px;
+}
+
+
+.contact-method hr {
+    margin-bottom: 40px;
+}
+
+.contact-method ul {
+    position: relative;
+}
+
+.contact-method ul li {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+
+.contact-method ul li:last-child {
+    margin-bottom: 0px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 24px;
+}
+
+.logo .line {
+    margin-right: 0;
+}
